@@ -8,7 +8,19 @@
  */
 module.exports = function( ceiling ) {
   // do work here
-
-
-  return 0;
+  let count = 2;
+  let match = false;
+  while(true){
+    for (let i = 2; i <= ceiling; i++){
+      match = true;
+      if (count % i !== 0){
+        i = ceiling;
+        match = false;
+      }
+    }
+    if (match){
+      return count;
+    }
+    count++;
+  }
 };
